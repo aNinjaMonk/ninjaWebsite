@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", function() {
             currentIndex--;
             updateGallery();
         }
+        alert('Previous Button Clicked');
+        _gs('event', 'Previous Button Clicked');
     });
 
     document.getElementById('nextBtn').addEventListener('click', function() {
@@ -23,7 +25,17 @@ document.addEventListener("DOMContentLoaded", function() {
             currentIndex++;
             updateGallery();
         }
+        _gs('event', 'Next Button Clicked');
     });
 
     updateGallery(); // Initial call to set up the gallery
+
+    // Track clicks on team member LinkedIn buttons
+    const linkedinButtons = document.querySelectorAll('.team .btn');
+    linkedinButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const memberName = this.closest('.card').querySelector('.card-title').textContent;
+            _gs('event', 'LinkedIn Click', { member: memberName });
+        });
+    });
 });
