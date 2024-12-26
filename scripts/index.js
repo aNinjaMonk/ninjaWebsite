@@ -38,4 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
             _gs('event', 'LinkedIn Click', { member: memberName });
         });
     });
+
+    // Change domain-experts text every 5 seconds
+    const domainExpertsElement = document.getElementById("domain-experts");
+    const domainExpertValues = ["Tech Innovators", "Industry Leaders", "Visionary Entrepreneurs", "Creative Thinkers"];
+    let currentExpertIndex = 0;
+
+    function updateDomainExpertText() {
+        currentExpertIndex = (currentExpertIndex + 1) % domainExpertValues.length;
+        domainExpertsElement.textContent = domainExpertValues[currentExpertIndex];
+    }
+
+    setInterval(updateDomainExpertText, 5000); // Change text every 5 seconds
 });
