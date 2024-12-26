@@ -57,12 +57,21 @@ document.addEventListener("DOMContentLoaded", function() {
         const ghostApiUrl = 'https://www.ninjamonk.in/ghost/api/content/posts/';
         const apiKey = '4d87e10fa3f68a7d4dc524e491'; // Replace with your actual API key
         try {
-            const response = await fetch(`${ghostApiUrl}?key=${apiKey}&limit=${limit}&page=${page}&filter=tag:-clients`);
+            const response = await fetch(`${ghostApiUrl}?key=${apiKey}&limit=all&filter=tag:-clients`);
             const data = await response.json();
-            displayBlogPosts(data.posts, page, limit, data.meta.pagination.pages);
+            const shuffledPosts = shuffleArray(data.posts).slice(0, limit);
+            displayBlogPosts(shuffledPosts, page, limit, Math.ceil(data.posts.length / limit));
         } catch (error) {
             console.error('Error fetching blog posts:', error);
         }
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
     }
 
     function displayBlogPosts(posts, currentPage, limit, totalPages) {
