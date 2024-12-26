@@ -1,8 +1,8 @@
-@background-color: #f5f5f5;
-@text-color: #333;
-@primary-color: #007bff;
-@secondary-color: #0056b3;
-@light-color: #ffffff;
+@background-color: #F6F4F0;
+@text-color: #000;
+@primary-color: #2E5077;
+@secondary-color: #4DA1A9;
+@light-color: #79D7BE;
 @border-color: #ddd;
 @hover-bg-color: #f0f0f0;
 @shadow-color: rgba(0, 0, 0, 0.1);
@@ -10,6 +10,10 @@
 @navbar-text-color: #333;
 @navbar-hover-color: #007bff;
 @navbar-border-color: #ddd;
+@pitch-bg-color: #f9f9f9;
+@pitch-text-color: #666;
+@pitch-btn-bg-color: #007bff;
+@pitch-btn-hover-bg-color: #0056b3;
 
 body {
     background-color: @background-color;
@@ -117,8 +121,28 @@ body {
     }
 
     .service-icon {
-        color: @text-color;
+        color: @primary-color;
+        font-size: 50px;
+        padding: 25px;
+
+        background-color: @light-color;
+        border-radius: 50%;
     }
+
+    .card-link {
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+            color: @text-color;
+        }
+    }
+
+    
+}
+
+.card-title {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
 }
 
 #domain-experts {
@@ -134,4 +158,62 @@ body {
         color: @secondary-color;
         background-color: fade(@secondary-color, 10%);
     }
+}
+
+#pitch-idea {
+    background-color: @pitch-bg-color;
+    padding: 60px 0;
+
+    h2 {
+        font-size: 2em;
+        color: @primary-color;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.2em;
+        color: @pitch-text-color;
+        margin-bottom: 30px;
+    }
+
+    .btn-primary {
+        background-color: @pitch-btn-bg-color;
+        color: #fff;
+        padding: 15px 30px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: @pitch-btn-hover-bg-color;
+        }
+    }
+}
+
+.client-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 10px;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .card-img-top {
+        transform: scale(1.1);
+    }
+}
+
+.card-img-top {
+    width: 100%; /* Ensures the image takes the full width of its container */
+    height: auto; /* Maintains the aspect ratio */
+    max-height: 300px; /* Sets a maximum height for the images */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    border-radius: 8px; /* Optional: Adds rounded corners to the images */
+    margin-bottom: 20px; /* Adds space below the images */
 } 
