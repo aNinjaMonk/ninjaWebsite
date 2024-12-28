@@ -1,30 +1,14 @@
 body {
-  background-color: #F6F4F0;
+  background-color: #f2f6f2;
   color: #000;
 }
-.hero-section {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95)), url('../images/hero-bg-light.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 0;
+body .section-padding {
+  padding: 100px 0;
 }
-.hero-section h1,
-.hero-section p,
-.hero-section .btn,
-.hero-section .achievement {
-  color: #000;
-}
-.hero-section .btn {
-  background-color: #79D7BE;
-  color: #000;
-  border: 1px solid #ddd;
-}
-.hero-section .btn:hover {
-  background-color: #f0f0f0;
-  color: #000000;
+body h1,
+body h3,
+body h2 {
+  color: #3877c0;
 }
 .navbar {
   background-color: rgba(255, 255, 255, 0.95);
@@ -55,66 +39,42 @@ body {
 .navbar .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
-.section-padding {
-  padding: 100px 0;
+.hero-section {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95)), url('../images/hero-bg-light.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0;
 }
-.footer {
-  background-color: #79D7BE;
-  color: #333333;
-}
-.footer h5,
-.footer h6 {
+.hero-section h1,
+.hero-section p,
+.hero-section .btn,
+.hero-section .achievement {
   color: #000;
 }
-.footer .logo {
-  width: 100px;
-  /* Adjust the width as needed */
-  height: auto;
-  /* Maintain aspect ratio */
-}
-.footer .footer-links a {
-  color: #333333;
-}
-.footer .footer-links a:hover {
-  color: #000;
-}
-.footer .social-links a {
-  color: #333333;
-}
-.footer .social-links a:hover {
-  color: #000;
-}
-.card {
-  background-color: #79D7BE;
+.hero-section .btn {
+  background-color: #3877c0;
+  color: white;
   border: 1px solid #ddd;
+  padding: 20px 50px;
+  margin-top: 20px;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: bold;
 }
-.card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-.card .service-icon {
-  color: #2E5077;
-  font-size: 50px;
-  padding: 25px;
-  background-color: #79D7BE;
-  border-radius: 50%;
-}
-.card .card-link {
-  text-decoration: none;
-}
-.card .card-link:hover {
-  text-decoration: none;
-  color: #000;
-}
-.card-title {
-  font-size: 1.5rem;
-  padding-bottom: 10px;
+.hero-section .btn:hover {
+  background-color: #2c5f99;
+  color: #ffffff;
+  box-shadow: #fff 2px;
 }
 #domain-experts {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   text-decoration: underline;
   font-weight: bold;
-  color: #2E5077;
-  background-color: rgba(46, 80, 119, 0.1);
+  color: #3877c0;
+  background-color: rgba(56, 119, 192, 0.1);
   padding: 0 5px;
   border-radius: 5px;
 }
@@ -128,7 +88,7 @@ body {
 }
 #pitch-idea h2 {
   font-size: 2em;
-  color: #2E5077;
+  color: #3877c0;
   margin-bottom: 20px;
 }
 #pitch-idea p {
@@ -147,32 +107,232 @@ body {
 #pitch-idea .btn-primary:hover {
   background-color: #0056b3;
 }
-.client-card {
+#process {
+  background-color: #3877c0;
+}
+#process h1,
+#process h2 {
+  color: white;
+}
+#process a {
+  color: white;
+}
+#process .card {
+  background-color: #f2f6f2;
+}
+#process .card .service-icon {
+  color: #3877c0;
+  font-size: 50px;
+  padding: 25px;
+}
+#process .card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+#portfolio {
+  background-color: #f2f6f2;
+}
+#portfolio .client-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
   border-radius: 10px;
+  text-decoration: none;
 }
-.client-card:hover {
+#portfolio .client-card:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
-.client-card .card-img-top {
+#portfolio .client-card .card-img-top {
   transition: transform 0.3s ease;
 }
-.client-card:hover .card-img-top {
+#portfolio .client-card:hover .card-img-top {
   transform: scale(1.1);
 }
-.card-img-top {
+#portfolio .client-card a {
+  text-decoration: none;
+}
+#portfolio .client-card a:hover {
+  text-decoration: none;
+  color: #000;
+}
+#media-mentions {
+  background-color: #3877c0;
+}
+#media-mentions h1 {
+  color: white;
+}
+#blog-posts .card {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+}
+#blog-posts .card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+#blog-posts .card .card-img-top {
   width: 100%;
   /* Ensures the image takes the full width of its container */
-  height: auto;
+  height: 300px;
   /* Maintains the aspect ratio */
   max-height: 300px;
   /* Sets a maximum height for the images */
-  object-fit: cover;
+  object-fit: fill;
   /* Ensures the image covers the entire area without distortion */
-  border-radius: 8px;
-  /* Optional: Adds rounded corners to the images */
-  margin-bottom: 20px;
-  /* Adds space below the images */
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+#blog-posts .card .card-body {
+  padding: 30px;
+  background-color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+#blog-posts .card .card-title {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+#blog-posts .card .card-title:hover {
+  color: #3877c0;
+}
+#pagination-controls .view-all {
+  color: #3877c0;
+  font-size: 20px;
+  font-weight: bold;
+}
+#pagination-controls .view-all:hover {
+  color: #2c5f99;
+}
+#pagination-controls i {
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#pagination-controls .btn-icon-circle {
+  background-color: #3877c0;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#pagination-controls .btn-icon-circle:hover {
+  background-color: #2c5f99;
+  color: white;
+}
+#faq {
+  padding: 60px 0;
+  background-color: #3877c0;
+  border-top: 1px solid #ddd;
+}
+#faq h2,
+#faq h3 {
+  color: white;
+}
+#faq .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#faq .accordion-header {
+  background-color: #3877c0;
+  color: white;
+  font-weight: bold;
+}
+#faq .accordion-body {
+  background-color: transparent;
+  color: white;
+  font-weight: 200;
+}
+#faq .accordion-button {
+  background-color: #3877c0;
+  color: white;
+  border: none;
+  transition: none;
+  font-size: large;
+}
+#faq .accordion-button:not(.collapsed) {
+  background-color: transparent;
+}
+#faq .accordion-button:focus {
+  box-shadow: none;
+}
+#testimonials {
+  padding: 60px 0;
+  background-color: transparent;
+}
+#testimonials .testimonial {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #000;
+  background-color: rgba(26, 26, 26, 0);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 800px;
+}
+#testimonials h5 {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #3877c0;
+}
+#testimonials .carousel-control-prev,
+#testimonials .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+#testimonials .carousel-control-prev:hover,
+#testimonials .carousel-control-next:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#testimonials .carousel-control-prev .carousel-control-prev-icon,
+#testimonials .carousel-control-next .carousel-control-prev-icon,
+#testimonials .carousel-control-prev .carousel-control-next-icon,
+#testimonials .carousel-control-next .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  background-size: 100%, 100%;
+}
+#contact {
+  background-color: #f2f6f2;
+}
+.footer {
+  background-color: #3877c0;
+  color: #333333;
+}
+.footer h5,
+.footer h6,
+.footer span,
+.footer p,
+.footer a {
+  color: white;
+}
+.footer .logo {
+  width: 150px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+.footer .footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer .footer-links a:hover {
+  color: #e6e6e6;
+}
+.footer .social-links a {
+  color: #ffffff;
+}
+.footer .social-links a:hover {
+  color: white;
 }

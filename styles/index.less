@@ -1,47 +1,44 @@
-@background-color: #F6F4F0;
+@background-color: #f2f6f2;
 @text-color: #000;
-@primary-color: #2E5077;
+@primary-color: #3877c0;
 @secondary-color: #4DA1A9;
 @light-color: #79D7BE;
 @border-color: #ddd;
+
 @hover-bg-color: #f0f0f0;
 @shadow-color: rgba(0, 0, 0, 0.1);
+
 @navbar-bg: rgba(255, 255, 255, 0.95);
 @navbar-text-color: #333;
 @navbar-hover-color: #007bff;
 @navbar-border-color: #ddd;
+
 @pitch-bg-color: #f9f9f9;
 @pitch-text-color: #666;
 @pitch-btn-bg-color: #007bff;
 @pitch-btn-hover-bg-color: #0056b3;
 
+
+@blog-bg-color: @primary-color;
+
+@faq-bg-color: transparent;
+@accordion-bg-color: @primary-color;
+@accordion-hover-bg-color: @background-color;
+@accordion-text-color: #fff;
+@accordion-body-bg-color: #000000;
+@accordion-body-text-color: #333;
+
+@border-radius: 20px;
+
+
 body {
     background-color: @background-color;
     color: @text-color;
-}
-
-.hero-section {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95)), url('../images/hero-bg-light.jpg');
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 120px 0;
-
-    h1, p, .btn, .achievement {
-        color: @text-color;
+    .section-padding {
+        padding: 100px 0;
     }
-
-    .btn {
-        background-color: @light-color;
-        color: @text-color;
-        border: 1px solid @border-color;
-
-        &:hover {
-            background-color: @hover-bg-color;
-            color: darken(@text-color, 10%);
-        }
+    h1, h3, h2 {
+        color: @primary-color;
     }
 }
 
@@ -79,74 +76,39 @@ body {
     }
 }
 
-.section-padding {
-    padding: 100px 0;
-}
-.footer {
-    background-color: @light-color;
-    color: lighten(@text-color, 20%);
+.hero-section {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95)), url('../images/hero-bg-light.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
 
-    h5, h6 {
+    h1, p, .btn, .achievement {
         color: @text-color;
     }
 
-    .logo{
-        width: 100px; /* Adjust the width as needed */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    .footer-links a {
-        color: lighten(@text-color, 20%);
-
-        &:hover {
-            color: @text-color;
-        }
-    }
-
-    .social-links a {
-        color: lighten(@text-color, 20%);
+    .btn {
+        background-color: @primary-color;
+        color: white;
+        border: 1px solid @border-color;
+        padding: 20px 50px;
+        margin-top: 20px;
+        border-radius: 50px;
+        font-size: 1.25rem;
+        font-weight: bold;
 
         &:hover {
-            color: @text-color;
+            background-color: darken(@primary-color, 10%);
+            color: lighten(white, 10%);
+            box-shadow: #fff 2px ;
         }
     }
-}
-
-.card {
-    background-color: @light-color;
-    border: 1px solid @border-color;
-
-    &:hover {
-        box-shadow: 0 10px 20px @shadow-color;
-    }
-
-    .service-icon {
-        color: @primary-color;
-        font-size: 50px;
-        padding: 25px;
-
-        background-color: @light-color;
-        border-radius: 50%;
-    }
-
-    .card-link {
-        text-decoration: none;
-        &:hover {
-            text-decoration: none;
-            color: @text-color;
-        }
-    }
-
-    
-}
-
-.card-title {
-    font-size: 1.5rem;
-    padding-bottom: 10px;
 }
 
 #domain-experts {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     text-decoration: underline;
     font-weight: bold;
     color: @primary-color;
@@ -190,30 +152,265 @@ body {
     }
 }
 
-.client-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-    border-radius: 10px;
-
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+#process {
+    background-color: @primary-color;
+    h1, h2 {
+        color: white;
+    }
+    a {
+        color: white;
     }
 
-    .card-img-top {
-        transition: transform 0.3s ease;
-    }
+    .card {
+        background-color: @background-color;
+        
 
-    &:hover .card-img-top {
-        transform: scale(1.1);
+        .service-icon {
+            color: @primary-color;
+            font-size: 50px;
+            padding: 25px;
+        }
+        
+        &:hover {
+            box-shadow: 0 10px 20px @shadow-color;
+        }
+    }
+    
+}
+
+#portfolio {
+    background-color: @background-color;
+
+    .client-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        border-radius: 10px;
+        text-decoration: none;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            transition: transform 0.3s ease;
+        }
+
+        &:hover .card-img-top {
+                transform: scale(1.1);
+        }
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+                color: @text-color;
+            }
+        }
     }
 }
 
-.card-img-top {
-    width: 100%; /* Ensures the image takes the full width of its container */
-    height: auto; /* Maintains the aspect ratio */
-    max-height: 300px; /* Sets a maximum height for the images */
-    object-fit: cover; /* Ensures the image covers the entire area without distortion */
-    border-radius: 8px; /* Optional: Adds rounded corners to the images */
-    margin-bottom: 20px; /* Adds space below the images */
-} 
+#media-mentions {
+    background-color: @primary-color;
+    h1 {
+        color: white;
+    }
+}
+
+#blog-posts {
+    
+    .card {
+        background-color: transparent;
+        border-radius: @border-radius;
+        border: 1px solid @border-color;
+
+        &:hover {
+            box-shadow: 0 10px 20px @shadow-color;
+        }
+
+        .card-img-top {
+            width: 100%; /* Ensures the image takes the full width of its container */
+            height: 300px; /* Maintains the aspect ratio */
+            max-height: 300px; /* Sets a maximum height for the images */
+            object-fit: fill; /* Ensures the image covers the entire area without distortion */
+            border-top-left-radius: @border-radius;
+            border-top-right-radius: @border-radius;
+        }
+
+        .card-body {
+            padding: 30px;
+            background-color: white;
+            border-bottom-left-radius: @border-radius;
+            border-bottom-right-radius: @border-radius;
+        }
+
+        .card-title {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+
+            &:hover {
+                color: @primary-color;
+            }
+        }
+        
+    }
+
+}
+
+#pagination-controls {
+    .view-all {
+        color: @primary-color;
+        font-size: 20px;
+        font-weight: bold;
+        &:hover {
+            color: darken(@primary-color, 10%);
+        }
+    }
+    i {
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .btn-icon-circle {
+        background-color: @primary-color;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+            background-color: darken(@primary-color, 10%);
+            color: white;
+        }
+    }
+}
+
+#faq {
+    padding: 60px 0;
+    background-color: @primary-color;
+    border-top: 1px solid @border-color;
+
+    h2, h3 {
+        color: white;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .accordion-header {
+        background-color: @accordion-bg-color;
+        color: white;
+        font-weight: bold;
+    }
+
+    .accordion-body {
+        background-color: transparent;
+        color: white;
+        font-weight: 200;
+    }
+
+    .accordion-button {
+        background-color: @accordion-bg-color;
+        color: white;
+        border: none;
+        transition: none;
+        font-size: large;
+
+        &:not(.collapsed) {
+            background-color: transparent;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    
+}
+
+#testimonials {
+    padding: 60px 0;
+    background-color: @faq-bg-color;
+
+    .testimonial {
+        text-align: center;
+        padding: 20px;
+        font-size: 1.2em;
+        color: @text-color;
+        background-color: lighten(@faq-bg-color, 10%);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    h5 {
+        margin-top: 15px;
+        font-weight: bold;
+        color: @primary-color;
+    }
+
+    .carousel-control-prev, .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+            background-size: 100%, 100%;
+        }
+    }
+}
+
+#contact {
+    background-color: @background-color;
+}
+
+
+.footer {
+    background-color: @primary-color;
+    color: lighten(@text-color, 20%);
+
+    h5, h6, span, p, a {
+        color: white;
+    }
+
+    .logo{
+        width: 150px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .footer-links a {
+        color: lighten(white, 20%);
+        text-decoration: none;
+
+        &:hover {
+            color: darken(white, 10%);
+        }
+    }
+
+    .social-links a {
+        color: lighten(white, 20%);
+
+        &:hover {
+            color: white;
+        }
+    }
+}
