@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ninja Monk Labs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="styles/index.css">
-    <!-- <link rel="stylesheet/less" type="text/css" href="styles/index.less" /> -->
-
 </head>
 <body>
     <!-- Navigation -->
@@ -35,6 +31,41 @@
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="g-scrolling-carousel carousel">
+                    <div class="items">
+                        <a href="./aiensured.html" class="text-decoration-none">
+                            <div class="card h-100">
+                                <img src="./images/clients/aiensured.png" class="card-img-top" alt="AiEnsured">
+                                <div class="card-body">
+                                    <h5 class="card-title">AiEnsured - Building Responsible AI</h5>
+                                    <p class="card-text">World's first comprehensive testing product for Privacy, Ethics and Security</p>
+                                </div>
+                                <div class="card-footer">
+                                    <small class="text-muted badge">Artificial Intelligence</small>
+                                    <small class="text-muted badge">Seed Round</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/2/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/3/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/4/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/5/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/6/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/7/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/8/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/9/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/10/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/11/144/96"></a>
+                        <a href="http://example.com" target="_blank"><img src="https://picsum.photos/seed/12/144/96"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -261,7 +292,7 @@
                     <h3 class="text-center mb-5">Check out our blog for insights on building tech products, efficient teams, startups and more.</h3>
                 </div>
             </div>
-            <div class="row" id="blog-posts">
+            <div class="row scrolling-wrapper" id="blog-posts">
                 <!-- Blog posts will be dynamically inserted here -->
             </div>
             <div class="row mt-3" id="pagination-controls">
@@ -398,6 +429,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="scripts/index.js"></script>
+    
     <script>
         // Add scrolled class to navbar when scrolling
         window.addEventListener('scroll', function() {

@@ -1,9 +1,10 @@
 @background-color: #f2f6f2;
 @text-color: #000;
 @primary-color: #6A66A3;
-@secondary-color: #4DA1A9;
-@light-color: #79D7BE;
+@secondary-color: #77A6B6;
+@light-color: #9DC3C2;
 @border-color: #ddd;
+@accent-color: #B3D89C;
 
 @hover-bg-color: #f0f0f0;
 @shadow-color: rgba(0, 0, 0, 0.1);
@@ -24,7 +25,7 @@
 @faq-bg-color: transparent;
 @accordion-bg-color: @primary-color;
 @accordion-hover-bg-color: @background-color;
-@accordion-text-color: #fff;
+@accordion-text-color: @text-color;
 @accordion-body-bg-color: #000000;
 @accordion-body-text-color: #333;
 
@@ -85,7 +86,10 @@ body {
     align-items: center;
     padding: 120px 0;
 
-    h1, p, .btn, .achievement {
+    h1{
+        color: @primary-color;
+    }
+    p, .achievement {
         color: @text-color;
     }
 
@@ -108,8 +112,8 @@ body {
     font-size: 1.75rem;
     text-decoration: underline;
     font-weight: bold;
-    color: @primary-color;
-    background-color: fade(@primary-color, 10%);
+    color: @secondary-color;
+    background-color: fade(@secondary-color, 10%);
     padding: 0 5px;
     border-radius: 5px;
 
@@ -143,6 +147,12 @@ body {
         font-size: 70px;
         padding: 25px;
     }
+
+    .card {
+        .card-body {
+            border-radius: @border-radius;
+        }
+    }
     
 }
 
@@ -163,7 +173,6 @@ body {
 .card {
     background-color: transparent;
     border-radius: @border-radius;
-    border: 1px solid @border-color;
 
     &:hover {
         box-shadow: 0 10px 20px @shadow-color;
@@ -181,7 +190,8 @@ body {
     .card-body {
         padding: 30px;
         background-color: white;
-        border-radius: @border-radius;
+        border-bottom-left-radius: @border-radius;
+        border-bottom-right-radius: @border-radius;
     }
 
     .card-title {
@@ -246,7 +256,6 @@ body {
     }
     
 }
-
 
 #faq {
     padding: 60px 0;
@@ -344,5 +353,29 @@ body {
         &:hover {
             color: white;
         }
+    }
+}
+
+.scrolling-wrapper {
+    width: 125%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    .card {
+        flex: 0 0 auto;
+    }
+    overflow-y: hidden;
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* Optional: just to ensure the background is transparent */
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    & {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
     }
 }

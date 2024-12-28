@@ -56,9 +56,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function scrollCarousel(container, direction) {
-        const itemWidth = container.querySelector('.carousel-item').offsetWidth;
+        const itemWidth = container.querySelector('.scrolling-wrapper .col-md-4').offsetWidth;
         container.scrollBy({
-            left: direction * itemWidth,
+            left: 2 * direction * itemWidth,
             behavior: 'smooth'
         });
     }
@@ -67,18 +67,14 @@ document.addEventListener("DOMContentLoaded", function() {
         const blogSection = document.getElementById('blog-posts');
         blogSection.innerHTML = ''; // Clear existing posts
 
-        const chunkSize = 3; // Number of posts to show at a time
+        const chunkSize = 5; // Number of posts to show at a time
         for (let i = 0; i < posts.length; i += chunkSize) {
             const chunk = posts.slice(i, i + chunkSize);
-            const carouselItem = document.createElement('div');
-            carouselItem.className = `carousel-item ${i === 0 ? 'active' : ''}`;
-
-            const row = document.createElement('div');
-            row.className = 'row';
-
+            
             chunk.forEach(post => {
                 const col = document.createElement('div');
-                col.className = 'col-md-4';
+                //col.className = 'col-md-4 carousel-item';
+                col.classList.add('col-md-4');
                 col.innerHTML = `
                     <a href="${post.url}" class="text-decoration-none">
                         <div class="card h-100">
@@ -89,23 +85,20 @@ document.addEventListener("DOMContentLoaded", function() {
                         </div>
                     </a>
                 `;
-                row.appendChild(col);
+                blogSection.appendChild(col);
             });
-
-            carouselItem.appendChild(row);
-            blogSection.appendChild(carouselItem);
         }
 
         // Add navigation buttons
         const prevBtn = document.createElement('button');
         prevBtn.innerHTML = '<i class="bi bi-arrow-left-short" />';
         prevBtn.classList.add('btn', 'btn-icon-circle');
-        prevBtn.addEventListener('click', () => scrollCarousel(carouselContainer, -1));
+        prevBtn.addEventListener('click', () => scrollCarousel(blogSection, -1));
 
         const nextBtn = document.createElement('button');
         nextBtn.innerHTML = '<i class="bi bi-arrow-right-short" />';
         nextBtn.classList.add('btn', 'btn-icon-circle', 'ms-2');
-        nextBtn.addEventListener('click', () => scrollCarousel(carouselContainer, 1));
+        nextBtn.addEventListener('click', () => scrollCarousel(blogSection, 1));
 
         const paginationControls = document.getElementById('pagination-controls');
         paginationControls.innerHTML = '<div class="col-md-10 offset-md-1 text-center"><a href="./blog" class="view-all">View All</a></div>';
