@@ -287,12 +287,12 @@ body::-webkit-scrollbar {
   color: white;
 }
 .scrolling-wrapper {
-  width: 100%;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-left: 150px;
+  margin-right: -11%;
+  padding-left: 10%;
   overflow-y: hidden;
   /* Hide scrollbar for Chrome, Safari, and Opera */
   /* Hide scrollbar for IE, Edge, and Firefox */

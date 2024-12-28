@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function scrollCarousel(container, direction) {
-        const itemWidth = container.querySelector('.scrolling-wrapper .col-md-4').offsetWidth;
+        const itemWidth = container.querySelector('.scrolling-wrapper .card').offsetWidth;
         container.scrollBy({
             left: 2 * direction * itemWidth,
             behavior: 'smooth'
