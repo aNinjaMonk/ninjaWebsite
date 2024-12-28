@@ -1,8 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // Portfolio Gallery
-    function portfolioGallery() {
-        const gallery = document.querySelector('.portfolio-gallery .row');
+    function updateGallery() {
+        const gallery = document.querySelector('.startups-gallery .row .col-md-4');
+        const items = gallery.children;
+        const totalItems = items.length;
+        const visibleItems = 3;
+        let currentIndex = 0;
+
+        for (let i = 0; i < totalItems; i++) {
+            items[i].style.display = (i >= currentIndex && i < currentIndex + visibleItems) ? 'block' : 'none';
+        }
+    }
+
+    // Startups Gallery
+    function startupsGallery() {
+        const gallery = document.querySelector('.startups-gallery .row');
         const items = gallery.children;
         const totalItems = items.length;
         const visibleItems = 3;
@@ -17,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 currentIndex--;
                 updateGallery();
             }
-            alert('Previous Button Clicked');
             _gs('event', 'Previous Button Clicked');
         });
 
@@ -117,8 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    //blogCarousel();
-    fetchBlogPosts(); // Initial call to fetch and display the blog posts
-    portfolioGallery(); // Initial call to set up the gallery
+    fetchBlogPosts();
+    //startupsGallery(); 
     domainExperts();
 });

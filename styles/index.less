@@ -1,6 +1,6 @@
 @background-color: #f2f6f2;
 @text-color: #000;
-@primary-color: #3877c0;
+@primary-color: #6A66A3;
 @secondary-color: #4DA1A9;
 @light-color: #79D7BE;
 @border-color: #ddd;
@@ -93,16 +93,13 @@ body {
         background-color: @primary-color;
         color: white;
         border: 1px solid @border-color;
-        padding: 20px 50px;
-        margin-top: 20px;
+        padding: 20px 70px;
         border-radius: 50px;
-        font-size: 1.25rem;
-        font-weight: bold;
+        font-size: 16px;
 
         &:hover {
             background-color: darken(@primary-color, 10%);
             color: lighten(white, 10%);
-            box-shadow: #fff 2px ;
         }
     }
 }
@@ -122,36 +119,6 @@ body {
     }
 }
 
-#pitch-idea {
-    background-color: @pitch-bg-color;
-    padding: 60px 0;
-
-    h2 {
-        font-size: 2em;
-        color: @primary-color;
-        margin-bottom: 20px;
-    }
-
-    p {
-        font-size: 1.2em;
-        color: @pitch-text-color;
-        margin-bottom: 30px;
-    }
-
-    .btn-primary {
-        background-color: @pitch-btn-bg-color;
-        color: #fff;
-        padding: 15px 30px;
-        border-radius: 5px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: @pitch-btn-hover-bg-color;
-        }
-    }
-}
-
 #process {
     background-color: @primary-color;
     h1, h2 {
@@ -159,54 +126,79 @@ body {
     }
     a {
         color: white;
+        &:hover {
+            color: darken(white, 20%);
+        }
     }
 
-    .card {
-        background-color: @background-color;
-        
-
-        .service-icon {
-            color: @primary-color;
-            font-size: 50px;
-            padding: 25px;
-        }
-        
+    .list-group-item a{
+        color: @text-color;
         &:hover {
-            box-shadow: 0 10px 20px @shadow-color;
+            color: @primary-color;
         }
+    }
+
+    .service-icon {
+        color: @primary-color;
+        font-size: 70px;
+        padding: 25px;
     }
     
 }
 
-#portfolio {
+#startups {
     background-color: @background-color;
 
-    .client-card {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        overflow: hidden;
-        border-radius: 10px;
-        text-decoration: none;
-
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-img-top {
-            transition: transform 0.3s ease;
-        }
-
-        &:hover .card-img-top {
-                transform: scale(1.1);
-        }
-        a {
-            text-decoration: none;
-            &:hover {
-                text-decoration: none;
-                color: @text-color;
-            }
+    #startups-controls {
+        i {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
     }
+}
+
+.card {
+    background-color: transparent;
+    border-radius: @border-radius;
+    border: 1px solid @border-color;
+
+    &:hover {
+        box-shadow: 0 10px 20px @shadow-color;
+    }
+
+    .card-img-top {
+        width: 100%; /* Ensures the image takes the full width of its container */
+        height: 250px; /* Maintains the aspect ratio */
+        max-height: 250px; /* Sets a maximum height for the images */
+        object-fit: fill; /* Ensures the image covers the entire area without distortion */
+        border-top-left-radius: @border-radius;
+        border-top-right-radius: @border-radius;
+    }
+
+    .card-body {
+        padding: 30px;
+        background-color: white;
+        border-radius: @border-radius;
+    }
+
+    .card-title {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+
+        &:hover {
+            color: @primary-color;
+        }
+    }
+
+    .card-text {
+        font-size: 14px;
+        font-weight: 200;
+    }
+    
 }
 
 #media-mentions {
@@ -216,78 +208,45 @@ body {
     }
 }
 
-#blog-posts {
+.btn-icon-circle {
+    background-color: @primary-color;
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        background-color: darken(@primary-color, 10%);
+        color: white;
+    }
+}
+
+#blog {
+    background-color: @background-color;
     
-    .card {
-        background-color: transparent;
-        border-radius: @border-radius;
-        border: 1px solid @border-color;
-
-        &:hover {
-            box-shadow: 0 10px 20px @shadow-color;
-        }
-
-        .card-img-top {
-            width: 100%; /* Ensures the image takes the full width of its container */
-            height: 300px; /* Maintains the aspect ratio */
-            max-height: 300px; /* Sets a maximum height for the images */
-            object-fit: fill; /* Ensures the image covers the entire area without distortion */
-            border-top-left-radius: @border-radius;
-            border-top-right-radius: @border-radius;
-        }
-
-        .card-body {
-            padding: 30px;
-            background-color: white;
-            border-bottom-left-radius: @border-radius;
-            border-bottom-right-radius: @border-radius;
-        }
-
-        .card-title {
-            text-decoration: none;
-            font-size: 16px;
+    #pagination-controls {
+        .view-all {
+            color: @primary-color;
+            font-size: 20px;
             font-weight: bold;
-
             &:hover {
-                color: @primary-color;
+                color: darken(@primary-color, 10%);
             }
+        }
+        i {
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
         
     }
-
+    
 }
 
-#pagination-controls {
-    .view-all {
-        color: @primary-color;
-        font-size: 20px;
-        font-weight: bold;
-        &:hover {
-            color: darken(@primary-color, 10%);
-        }
-    }
-    i {
-        font-size: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-    }
-    .btn-icon-circle {
-        background-color: @primary-color;
-        color: white;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        &:hover {
-            background-color: darken(@primary-color, 10%);
-            color: white;
-        }
-    }
-}
 
 #faq {
     padding: 60px 0;
@@ -298,19 +257,15 @@ body {
         color: white;
     }
 
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
     .accordion-header {
         background-color: @accordion-bg-color;
         color: white;
-        font-weight: bold;
+        font-weight: 600;
+        font-size: 40px;
     }
 
     .accordion-body {
-        background-color: transparent;
+        background-color: @accordion-bg-color;
         color: white;
         font-weight: 200;
     }
@@ -355,34 +310,11 @@ body {
         font-weight: bold;
         color: @primary-color;
     }
-
-    .carousel-control-prev, .carousel-control-next {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .carousel-control-prev-icon, .carousel-control-next-icon {
-            width: 20px;
-            height: 20px;
-            background-size: 100%, 100%;
-        }
-    }
 }
 
 #contact {
     background-color: @background-color;
 }
-
 
 .footer {
     background-color: @primary-color;
