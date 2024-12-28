@@ -74,11 +74,11 @@ document.addEventListener("DOMContentLoaded", function() {
             chunk.forEach(post => {
                 const col = document.createElement('div');
                 //col.className = 'col-md-4 carousel-item';
-                col.classList.add('col-md-4');
+                col.classList.add('col-md-5');
                 col.innerHTML = `
                     <a href="${post.url}" class="text-decoration-none">
                         <div class="card h-100">
-                            <img src="${post.feature_image}" class="card-img-top" alt="${post.title}">
+                            <img src="${post.feature_image}" class="card-img-top" alt="${post.title}" loading="lazy">
                             <div class="card-body">
                                 <h5 class="card-title">${post.title}</h5>
                             </div>

@@ -41,6 +41,14 @@ body {
     h1, h3, h2 {
         color: @primary-color;
     }
+    /* Hide scrollbar */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    & {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 }
 
 .navbar {
@@ -357,12 +365,12 @@ body {
 }
 
 .scrolling-wrapper {
-    width: 125%;
+    width: 100%;
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     scroll-behavior: smooth;
-
+    padding-left: 150px;
     .card {
         flex: 0 0 auto;
     }
