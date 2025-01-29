@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     async function fetchBlogPosts() {
-        const ghostApiUrl = 'https://www.ninjamonk.in/blog/ghost/api/content/posts/';
+        const ghostApiUrl = 'https://ninjamonk.in/blog/ghost/api/content/posts/';
         const apiKey = '522e81bccd56e6acb76110de58'; // Replace with your actual API key
         try {
             const response = await fetch(`${ghostApiUrl}?key=${apiKey}&limit=all&filter=tag:-clients`);
