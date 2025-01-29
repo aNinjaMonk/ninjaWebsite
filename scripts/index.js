@@ -54,13 +54,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setInterval(updateDomainExpertText, 5000); // Change text every 5 seconds
     }
-
-    function scrollCarousel(container, direction) {
-        const itemWidth = container.querySelector('.scrolling-wrapper .card').offsetWidth;
+    
+    function scrollCarousel(target, container, direction) {
+        const itemWidth = 456;
+        //container.querySelector('.scrolling-wrapper .card').offsetWidth;
         container.scrollBy({
-            left: 2 * direction * itemWidth,
+            left: direction * itemWidth,
             behavior: 'smooth'
         });
+        
     }
 
     function displayBlogPosts(posts) {
@@ -74,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
             chunk.forEach(post => {
                 const col = document.createElement('div');
                 //col.className = 'col-md-4 carousel-item';
-                col.classList.add('col-md-5');
+                col.classList.add('col-md-4');
                 col.innerHTML = `
                     <a href="${post.url}" class="text-decoration-none">
                         <div class="card h-100">
@@ -93,12 +95,17 @@ document.addEventListener("DOMContentLoaded", function() {
         const prevBtn = document.createElement('button');
         prevBtn.innerHTML = '<i class="bi bi-arrow-left-short" />';
         prevBtn.classList.add('btn', 'btn-icon-circle');
-        prevBtn.addEventListener('click', () => scrollCarousel(blogSection, -1));
+        prevBtn.disabled = true;
+        prevBtn.addEventListener('click', (e) => {
+            scrollCarousel(e.target, blogSection, -1);
+        });
 
         const nextBtn = document.createElement('button');
         nextBtn.innerHTML = '<i class="bi bi-arrow-right-short" />';
         nextBtn.classList.add('btn', 'btn-icon-circle', 'ms-2');
-        nextBtn.addEventListener('click', () => scrollCarousel(blogSection, 1));
+        nextBtn.addEventListener('click', (e) => {
+            scrollCarousel(e.target, blogSection, 1);
+        });
 
         const paginationControls = document.getElementById('pagination-controls');
         paginationControls.innerHTML = '<div class="col-md-10 offset-md-1 text-center"><a href="./blog" class="view-all">View All</a></div>';
